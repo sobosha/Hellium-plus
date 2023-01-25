@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_chooseLoginFragment"
+            app:destination="@id/chooseLoginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseLoginFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.ChooseLoginFragment"
+        android:label="fragment_choose_login"
+        tools:layout="@layout/fragment_choose_login">
+        <action
+            android:id="@+id/action_chooseLoginFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_chooseLoginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_confirmRegisterFragment"
+            app:destination="@id/confirmRegisterFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmRegisterFragment"
+        android:name="com.example.collegeapp.features.authentication.ui.fragments.ConfirmRegisterFragment"
+        android:label="fragment_confirm_register"
+        tools:layout="@layout/fragment_confirm_register">
+        <action
+            android:id="@+id/action_confirmRegisterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.collegeapp.features.profile.ui.fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_bookMarksFragment"
+            app:destination="@id/bookMarksFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_myArticlesFragment"
+            app:destination="@id/myArticlesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_childUserSearchFragment2"
+            app:destination="@id/childUserSearchFragment2" />
+        <action
+            android:id="@+id/action_searchFragment_to_childTagSearchFragment"
+            app:destination="@id/childTagSearchFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_childPostSearchFragment"
+            app:destination="@id/childPostSearchFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_searchUserProfileFragment"
+            app:destination="@id/searchUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.collegeapp.features.article.ui.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_newArticleFragment"
+            app:destination="@id/newArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookMarksFragment"
+        android:name="com.example.collegeapp.features.bookmark.ui.fragments.ChildBookmarksFragment"
+        android:label="fragment_book_marks"
+        tools:layout="@layout/fragment_child_book_marks" />
+    <fragment
+        android:id="@+id/myArticlesFragment"
+        android:name="com.example.collegeapp.features.profile.ui.fragments.ChildMyArticlesFragment"
+        android:label="fragment_my_articles"
+        tools:layout="@layout/fragment_child_my_articles" />
+    <fragment
+        android:id="@+id/childPostSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildPostSearchFragment"
+        android:label="ChildPostSearchFragment"
+        tools:layout="@layout/fragment_child_search_post">
+        <action
+            android:id="@+id/action_childPostSearchFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/childTagSearchFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildTagSearchFragment"
+        android:label="ChildTagSearchFragment"
+        tools:layout="@layout/fragment_child_search_tag" />
+    <fragment
+        android:id="@+id/childUserSearchFragment2"
+        android:name="com.example.collegeapp.features.search.ui.fragments.ChildUserSearchFragment"
+        android:label="ChildUserSearchFragment"
+        tools:layout="@layout/fragment_child_search_user">
+        <action
+            android:id="@+id/action_childUserSearchFragment2_to_searchUserProfileFragment"
+            app:destination="@id/searchUserProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newArticleFragment"
+        android:name="com.example.collegeapp.features.article.ui.fragments.NewArticleFragment"
+        android:label="fragment_new_article"
+        tools:layout="@layout/fragment_new_article" />
+    <fragment
+        android:id="@+id/showArticleFragment"
+        android:name="com.example.collegeapp.features.article.ui.fragments.ShowArticleFragment"
+        android:label="fragment_show_article"
+        tools:layout="@layout/fragment_show_article">
+        <argument
+            android:name="articleID"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserProfileFragment"
+        android:name="com.example.collegeapp.features.search.ui.fragments.SearchUserProfileFragment"
+        android:label="SearchUserProfileFragment">
+        <argument
+            android:name="user_id"
+            app:argType="integer" />
+        <argument
+            android:name="user_name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_searchUserProfileFragment_to_showArticleFragment"
+            app:destination="@id/showArticleFragment" />
+    </fragment>
+</navigation>

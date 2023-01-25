@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.collegeapp.features.authentication.ui.viewModel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        tools:context=".features.authentication.ui.fragments.LoginFragment">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_image"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/gradiant_black_bottom_to_top" />
+
+        <TextView
+            style="@style/custom_textView_header30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_login_bold"
+            app:layout_constraintBottom_toTopOf="@+id/til_mobileNumber_loginFragment"
+            app:layout_constraintStart_toStartOf="@+id/til_mobileNumber_loginFragment" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal075_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.075" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal14_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_vertical50_loginFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.5" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintBottom_toTopOf="@id/gl_horizontal14_loginFragment"
+            app:layout_constraintEnd_toStartOf="@id/gl_vertical50_loginFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+            app:layout_constraintTop_toBottomOf="@+id/gl_horizontal075_loginFragment" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal35_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_horizontal43_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalStart_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04Start_percent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_verticalEnd_loginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/guid_0.04End_percent" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login_loginFragment"
+            style="@style/custom_button_blue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/label_login_bold"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+            app:layout_constraintTop_toBottomOf="@+id/til_pass_loginFragment" />
+
+        <ProgressBar
+            android:id="@+id/Progress_login_loginFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+            app:layout_constraintTop_toBottomOf="@+id/til_pass_loginFragment" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_mobileNumber_loginFragment"
+            style="@style/custom_inputEditTextLayout_gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/gl_horizontal43_loginFragment"
+            app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+            app:startIconDrawable="@drawable/ic_mobile_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewModel.phoneNumber}"
+                style="@style/custom_inputEditText_gray"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/label_mobile_number"
+                android:maxLength="11"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pass_loginFragment"
+            style="@style/custom_inputEditTextLayout_gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            app:layout_constraintEnd_toStartOf="@+id/gl_verticalEnd_loginFragment"
+            app:layout_constraintStart_toEndOf="@id/gl_verticalStart_loginFragment"
+            app:layout_constraintTop_toBottomOf="@id/til_mobileNumber_loginFragment"
+            app:startIconDrawable="@drawable/ic_pass">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewModel.password}"
+                style="@style/custom_inputEditText_gray"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/label_password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_dontHaveAccount_loginFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:gravity="end"
+            android:text="@string/label_dontHaveAccount"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size16"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toStartOf="@+id/tv_register_loginFragment"
+            app:layout_constraintStart_toStartOf="@+id/btn_login_loginFragment"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_loginFragment" />
+
+        <TextView
+            android:id="@+id/tv_register_loginFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
+            android:gravity="start"
+            android:text="@string/label_registerStr_bold"
+            android:textColor="@color/blue_400"
+            android:textSize="@dimen/size16"
+            app:layout_constraintDimensionRatio="@dimen/ratio_312_48"
+            app:layout_constraintEnd_toEndOf="@+id/btn_login_loginFragment"
+            app:layout_constraintStart_toEndOf="@+id/tv_dontHaveAccount_loginFragment"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login_loginFragment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

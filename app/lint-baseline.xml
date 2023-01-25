@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.2" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.2)" variant="fatal" version="7.2.2">
+
+    <issue
+        id="NotSibling"
+        message="`@id/btn_shareArticle_newArticleFragment` is not a sibling in the same `ConstraintLayout`"
+        errorLine1="            app:layout_constraintBottom_toTopOf=&quot;@id/btn_shareArticle_newArticleFragment&quot;"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_bottom_sheet_tags.xml"
+            line="77"
+            column="13"/>
+    </issue>
+
+</issues>
